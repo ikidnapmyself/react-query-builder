@@ -4,6 +4,8 @@ A composable, headless React 19 query builder component for conditional logic UI
 
 Build complex nested conditions with AND, OR, and GROUP operations. The output is a structured JSON tree — plug it into alert managers, trading bots, IFTTT-style automations, pipeline managers, or anything that needs user-defined rules.
 
+<img width="871" height="576" alt="image" src="https://github.com/user-attachments/assets/1303d4a2-7bad-4a61-b4b0-2d9603dcdd24" />
+
 ## Features
 
 - **Composition-first API** — hooks as the primary interface, compound components for convenience, pre-built templates for zero setup
