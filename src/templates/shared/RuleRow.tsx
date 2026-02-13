@@ -54,9 +54,11 @@ function ValueInput({
     );
   }
 
+  const inputType = type === 'select' ? 'text' : type;
+
   return (
     <input
-      type={type}
+      type={inputType}
       className={className}
       value={String(rule.value ?? '')}
       placeholder="Value"
