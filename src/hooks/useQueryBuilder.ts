@@ -12,19 +12,18 @@ type UseQueryBuilderOptions = {
   operators?: OperatorDefinition[];
 };
 
-function updateGroupRecursive(group: Group, updater: (g: Group) => Group | null): Group | null {
+function updateGroupRecursive(group: Group, updater: (g: Group) => Group): Group {
   const result = updater(group);
-  if (result !== null && result !== group) return result;
-  if (result === null) return null;
+  if (result !== group) return result;
 
   const newRules = group.rules.map((item) => {
     if (isGroup(item)) {
-      return updateGroupRecursive(item, updater) ?? item;
+      return updateGroupRecursive(item, updater);
     }
     return item;
-  }).filter((item): item is Rule | Group => item !== undefined);
+  });
 
-  if (newRules.length !== group.rules.length || newRules.some((r, i) => r !== group.rules[i])) {
+  if (newRules.some((r, i) => r !== group.rules[i])) {
     return { ...group, rules: newRules };
   }
 
@@ -140,7 +139,7 @@ export function useQueryBuilder(options: UseQueryBuilderOptions = {}): QueryBuil
         if (g.id === groupId) return { ...g, combinator };
         return g;
       });
-      setQuery(updated ?? query);
+      setQuery(updated);
     },
     [query, setQuery],
   );
