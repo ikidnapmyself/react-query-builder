@@ -14,6 +14,26 @@ export default defineConfig({
     environment: 'jsdom',
     setupFiles: ['./src/test/setup.ts'],
     include: ['src/**/*.test.{ts,tsx}'],
+    coverage: {
+      provider: 'v8',
+      reporter: ['text', 'html'],
+      include: ['src/**/*.{ts,tsx}'],
+      exclude: [
+        'src/index.ts',
+        'src/core/index.ts',
+        'src/hooks/index.ts',
+        'src/context/index.ts',
+        'src/components/index.ts',
+        'src/test/**',
+        'src/templates/shared/types.ts',
+      ],
+      thresholds: {
+        lines: 100,
+        branches: 100,
+        functions: 100,
+        statements: 100,
+      },
+    },
     projects: [{
       extends: true,
       plugins: [
