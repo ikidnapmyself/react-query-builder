@@ -1,5 +1,10 @@
 # react-query-builder
 
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/ikidnapmyself/react-query-builder/badges/quality-score.png?b=main)](https://scrutinizer-ci.com/g/ikidnapmyself/react-query-builder/?branch=main)
+[![Code Coverage](https://scrutinizer-ci.com/g/ikidnapmyself/react-query-builder/badges/coverage.png?b=main)](https://scrutinizer-ci.com/g/ikidnapmyself/react-query-builder/?branch=main)
+[![Build Status](https://scrutinizer-ci.com/g/ikidnapmyself/react-query-builder/badges/build.png?b=main)](https://scrutinizer-ci.com/g/ikidnapmyself/react-query-builder/build-status/main)
+[![Code Intelligence Status](https://scrutinizer-ci.com/g/ikidnapmyself/react-query-builder/badges/code-intelligence.svg?b=main)](https://scrutinizer-ci.com/code-intelligence)
+
 A composable, headless React 19 query builder component for conditional logic UIs.
 
 Build complex nested conditions with AND, OR, and GROUP operations. The output is a structured JSON tree — plug it into alert managers, trading bots, IFTTT-style automations, pipeline managers, or anything that needs user-defined rules.
