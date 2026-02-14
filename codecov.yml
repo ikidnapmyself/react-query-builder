@@ -1,3 +1,7 @@
 ignore:
+  - "stories/**"
+  - ".storybook/**"
+  - "*.config.ts"
+  - "*.shims.d.ts"
   - "src/test/**"
   - "src/templates/shared/types.ts"
