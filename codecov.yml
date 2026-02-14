@@ -6,3 +6,4 @@ ignore:
   - "vitest\\.shims\\.d\\.ts"
   - "src/test/**/*"
   - "src/templates/shared/types\\.ts"
+  - "src/types/types\\.ts"
