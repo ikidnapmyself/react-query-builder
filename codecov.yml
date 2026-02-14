@@ -7,4 +7,3 @@ ignore:
   - "src/test/**/*"
   - "src/templates/shared/types\\.ts"
   - "src/types/types\\.ts"
-  - "src/types/isGroup\\.ts"
