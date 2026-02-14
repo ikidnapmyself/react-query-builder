@@ -1,9 +1,11 @@
 checks:
     javascript: true
 build:
+    environment:
+        docker:
+            image: node:22
     dependencies:
         override:
-            - nvm install 22 && nvm use 22
             - npm ci
     nodes:
         analysis:
