@@ -1,5 +1,8 @@
 # react-query-builder
 
+[![CI](https://github.com/ikidnapmyself/react-query-builder/actions/workflows/ci.yml/badge.svg)](https://github.com/ikidnapmyself/react-query-builder/actions/workflows/ci.yml)
+[![codecov](https://codecov.io/gh/ikidnapmyself/react-query-builder/graph/badge.svg)](https://codecov.io/gh/ikidnapmyself/react-query-builder)
+
 A composable, headless React 19 query builder component for conditional logic UIs.
 
 Build complex nested conditions with AND, OR, and GROUP operations. The output is a structured JSON tree — plug it into alert managers, trading bots, IFTTT-style automations, pipeline managers, or anything that needs user-defined rules.
