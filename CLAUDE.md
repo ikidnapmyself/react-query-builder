@@ -88,7 +88,7 @@ type Group = {
 - **Context for shared state**: `useQueryBuilder` provides the root state. Compound components read it from `QueryBuilderContext`. Hooks can also accept the context value directly for non-component use cases.
 - **Controlled & uncontrolled**: Support both `value`/`onChange` (controlled) and `defaultValue` (uncontrolled) patterns at every tier.
 - **Event listeners over hidden inputs**: Prefer `onChange` callback as the primary API. Optionally support rendering a hidden `<input>` with serialized JSON for traditional form submission.
-- **Theme presets**: Ship default Tailwind template. Provide Bootstrap and unstyled preset alternatives as separate exports (e.g., `react-query-builder/templates/bootstrap`).
+- **Theme presets**: Ship default Tailwind template. Provide Bootstrap and unstyled preset alternatives as separate exports (e.g., `headless-react-query-builder/templates/bootstrap`).
 
 ### Directory Structure
 

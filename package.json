@@ -1,5 +1,5 @@
 {
-  "name": "react-query-builder",
+  "name": "headless-react-query-builder",
   "version": "0.1.0",
   "type": "module",
   "main": "./dist/index.cjs",

@@ -5,15 +5,15 @@ type TemplateName = 'Tailwind' | 'Bootstrap' | 'Unstyled';
 const templateMap: Record<TemplateName, { component: string; path: string }> = {
   Tailwind: {
     component: 'TailwindQueryBuilder',
-    path: 'react-query-builder/templates/tailwind',
+    path: 'headless-react-query-builder/templates/tailwind',
   },
   Bootstrap: {
     component: 'BootstrapQueryBuilder',
-    path: 'react-query-builder/templates/bootstrap',
+    path: 'headless-react-query-builder/templates/bootstrap',
   },
   Unstyled: {
     component: 'UnstyledQueryBuilder',
-    path: 'react-query-builder/templates/unstyled',
+    path: 'headless-react-query-builder/templates/unstyled',
   },
 };
 
@@ -66,7 +66,7 @@ export function generateSource(useCase: UseCase, template: TemplateName): string
   const source = [
     `import { useState } from 'react';`,
     `import { ${component} } from '${path}';`,
-    `import type { Group } from 'react-query-builder';`,
+    `import type { Group } from 'headless-react-query-builder';`,
     ``,
     `const fields = ${serialize(useCase.fields, 0)};`,
     operatorsSection,

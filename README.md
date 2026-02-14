@@ -1,4 +1,4 @@
-# react-query-builder
+# headless-react-query-builder
 
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/ikidnapmyself/react-query-builder/badges/quality-score.png?b=main)](https://scrutinizer-ci.com/g/ikidnapmyself/react-query-builder/?branch=main)
 [![Build Status](https://scrutinizer-ci.com/g/ikidnapmyself/react-query-builder/badges/build.png?b=main)](https://scrutinizer-ci.com/g/ikidnapmyself/react-query-builder/build-status/main)
@@ -24,7 +24,7 @@ Build complex nested conditions with AND, OR, and GROUP operations. The output i
 ## Installation
 
 ```bash
-npm install react-query-builder
+npm install headless-react-query-builder
 ```
 
 Peer dependencies:
@@ -40,7 +40,7 @@ npm install react@^19.0.0 react-dom@^19.0.0
 The primary API. You call hooks, you render whatever you want.
 
 ```tsx
-import { useQueryBuilder } from 'react-query-builder';
+import { useQueryBuilder } from 'headless-react-query-builder';
 
 function MyQueryBuilder() {
   const { query, addRule, addGroup, removeRule, updateRule, setCombinator } =
@@ -90,8 +90,8 @@ Wraps `useQueryBuilder` in a provider so child components can access the query s
 
 ```tsx
 import { useState } from 'react';
-import { QueryBuilder, createEmptyGroup } from 'react-query-builder';
-import type { Group } from 'react-query-builder';
+import { QueryBuilder, createEmptyGroup } from 'headless-react-query-builder';
+import type { Group } from 'headless-react-query-builder';
 
 function App() {
   const [query, setQuery] = useState<Group>(createEmptyGroup);
@@ -222,7 +222,7 @@ Access the query builder state from any child of `<QueryBuilder>`. Returns the s
 ## Defining Fields
 
 ```typescript
-import type { FieldDefinition } from 'react-query-builder';
+import type { FieldDefinition } from 'headless-react-query-builder';
 
 const fields: FieldDefinition[] = [
   { name: 'temperature', label: 'Temperature', type: 'number' },
@@ -240,7 +240,7 @@ Supported field types: `text`, `number`, `date`, `boolean`, `select`.
 ## Custom Operators
 
 ```typescript
-import type { OperatorDefinition } from 'react-query-builder';
+import type { OperatorDefinition } from 'headless-react-query-builder';
 
 const operators: OperatorDefinition[] = [
   { name: 'eq', label: 'equals' },
@@ -257,13 +257,13 @@ The library ships with template presets for common CSS frameworks:
 
 ```tsx
 // Tailwind (default)
-import { TailwindQueryBuilder } from 'react-query-builder/templates/tailwind';
+import { TailwindQueryBuilder } from 'headless-react-query-builder/templates/tailwind';
 
 // Bootstrap
-import { BootstrapQueryBuilder } from 'react-query-builder/templates/bootstrap';
+import { BootstrapQueryBuilder } from 'headless-react-query-builder/templates/bootstrap';
 
 // Unstyled (headless, no classes)
-import { UnstyledQueryBuilder } from 'react-query-builder/templates/unstyled';
+import { UnstyledQueryBuilder } from 'headless-react-query-builder/templates/unstyled';
 ```
 
 Templates are built on top of the same hooks and context — they're just pre-styled component trees. You can use them as-is or as a reference for building your own.
@@ -277,7 +277,7 @@ All use cases are available as interactive Storybook stories across all three te
 Define when alerts fire based on metric thresholds.
 
 ```tsx
-import { TailwindQueryBuilder } from 'react-query-builder/templates/tailwind';
+import { TailwindQueryBuilder } from 'headless-react-query-builder/templates/tailwind';
 
 const fields = [
   { name: 'cpu_usage', label: 'CPU Usage (%)', type: 'number' as const },
@@ -306,7 +306,7 @@ const fields = [
 Build entry/exit conditions for trading strategies.
 
 ```tsx
-import { TailwindQueryBuilder } from 'react-query-builder/templates/tailwind';
+import { TailwindQueryBuilder } from 'headless-react-query-builder/templates/tailwind';
 
 const fields = [
   { name: 'price', label: 'Price', type: 'number' as const },
