@@ -19,11 +19,6 @@ export default defineConfig({
       reporter: ['text', 'html', 'clover'],
       include: ['src/**/*.{ts,tsx}'],
       exclude: [
-        'src/index.ts',
-        'src/core/index.ts',
-        'src/hooks/index.ts',
-        'src/context/index.ts',
-        'src/components/index.ts',
         'src/test/**',
         'src/templates/shared/types.ts',
       ],
