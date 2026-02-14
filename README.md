@@ -9,6 +9,8 @@ A composable, headless React 19 query builder component for conditional logic UI
 
 Build complex nested conditions with AND, OR, and GROUP operations. The output is a structured JSON tree — plug it into alert managers, trading bots, IFTTT-style automations, pipeline managers, or anything that needs user-defined rules.
 
+[**Live Storybook Demo**](https://ikidnapmyself.github.io/react-query-builder/)
+
 <img width="871" height="576" alt="image" src="https://github.com/user-attachments/assets/1303d4a2-7bad-4a61-b4b0-2d9603dcdd24" />
 
 ## Features
@@ -267,6 +269,27 @@ import { UnstyledQueryBuilder } from 'headless-react-query-builder/templates/uns
 ```
 
 Templates are built on top of the same hooks and context — they're just pre-styled component trees. You can use them as-is or as a reference for building your own.
+
+### Custom Button Labels
+
+All templates accept a `labels` prop via the `TemplateLabels` type to customize button and combinator text:
+
+```tsx
+import type { TemplateLabels } from 'headless-react-query-builder';
+
+const labels: TemplateLabels = {
+  addRule: '+ Condition',
+  addGroup: '+ Sub-group',
+  removeRule: 'Delete',
+  removeGroup: 'Delete Group',
+  and: 'ALL',
+  or: 'ANY',
+};
+
+<TailwindQueryBuilder fields={fields} labels={labels} onChange={handleChange} />
+```
+
+All label fields are optional and fall back to sensible defaults (`+ Rule`, `+ Group`, `Remove`, `AND`, `OR`).
 
 ## Use Cases
 

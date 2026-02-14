@@ -1,11 +1,12 @@
 import type { Rule, FieldDefinition, OperatorDefinition } from '../../types';
-import type { TemplateClassNames } from './types';
+import type { TemplateClassNames, TemplateLabels } from './types';
 
 type RuleRowProps = {
   rule: Rule;
   fields: FieldDefinition[];
   operators: OperatorDefinition[];
   classNames: TemplateClassNames;
+  labels?: TemplateLabels;
   onUpdate: (ruleId: string, updates: Partial<Omit<Rule, 'id'>>) => void;
   onRemove: (ruleId: string) => void;
 };
@@ -70,7 +71,7 @@ function ValueInput({
   );
 }
 
-export function RuleRow({ rule, fields, operators, classNames, onUpdate, onRemove }: RuleRowProps) {
+export function RuleRow({ rule, fields, operators, classNames, labels, onUpdate, onRemove }: RuleRowProps) {
   const currentField = fields.find((f) => f.name === rule.field);
 
   return (
@@ -112,7 +113,7 @@ export function RuleRow({ rule, fields, operators, classNames, onUpdate, onRemov
         className={classNames.removeButton}
         onClick={() => onRemove(rule.id)}
       >
-        Remove
+        {labels?.removeRule ?? 'Remove'}
       </button>
     </div>
   );

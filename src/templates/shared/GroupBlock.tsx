@@ -1,6 +1,6 @@
 import type { Group, Rule, FieldDefinition, OperatorDefinition } from '../../types';
 import { isGroup } from '../../types';
-import type { TemplateClassNames } from './types';
+import type { TemplateClassNames, TemplateLabels } from './types';
 import { RuleRow } from './RuleRow';
 
 type GroupBlockProps = {
@@ -9,6 +9,7 @@ type GroupBlockProps = {
   fields: FieldDefinition[];
   operators: OperatorDefinition[];
   classNames: TemplateClassNames;
+  labels?: TemplateLabels;
   onAddRule: (groupId: string) => void;
   onAddGroup: (groupId: string) => void;
   onRemoveRule: (ruleId: string) => void;
@@ -23,6 +24,7 @@ export function GroupBlock({
   fields,
   operators,
   classNames,
+  labels,
   onAddRule,
   onAddGroup,
   onRemoveRule,
@@ -43,7 +45,7 @@ export function GroupBlock({
             }
             onClick={() => onSetCombinator(group.id, 'AND')}
           >
-            AND
+            {labels?.and ?? 'AND'}
           </button>
           <button
             type="button"
@@ -54,7 +56,7 @@ export function GroupBlock({
             }
             onClick={() => onSetCombinator(group.id, 'OR')}
           >
-            OR
+            {labels?.or ?? 'OR'}
           </button>
         </div>
 
@@ -63,14 +65,14 @@ export function GroupBlock({
           className={classNames.addButton}
           onClick={() => onAddRule(group.id)}
         >
-          + Rule
+          {labels?.addRule ?? '+ Rule'}
         </button>
         <button
           type="button"
           className={classNames.addGroupButton}
           onClick={() => onAddGroup(group.id)}
         >
-          + Group
+          {labels?.addGroup ?? '+ Group'}
         </button>
 
         {!isRoot && (
@@ -79,7 +81,7 @@ export function GroupBlock({
             className={classNames.removeButton}
             onClick={() => onRemoveGroup(group.id)}
           >
-            Remove
+            {labels?.removeGroup ?? 'Remove'}
           </button>
         )}
       </div>
@@ -93,6 +95,7 @@ export function GroupBlock({
               fields={fields}
               operators={operators}
               classNames={classNames}
+              labels={labels}
               onAddRule={onAddRule}
               onAddGroup={onAddGroup}
               onRemoveRule={onRemoveRule}
@@ -107,6 +110,7 @@ export function GroupBlock({
               fields={fields}
               operators={operators}
               classNames={classNames}
+              labels={labels}
               onUpdate={onUpdateRule}
               onRemove={onRemoveRule}
             />

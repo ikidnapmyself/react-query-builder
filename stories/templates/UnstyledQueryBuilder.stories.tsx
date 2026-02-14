@@ -2,6 +2,8 @@ import type { Meta, StoryObj } from '@storybook/react-vite';
 import type { CSSProperties } from 'react';
 import { useState } from 'react';
 import { UnstyledQueryBuilder } from '../../src/templates/unstyled';
+import { TemplateQueryBuilder } from '../../src/templates/shared/TemplateQueryBuilder';
+import type { TemplateClassNames } from '../../src/templates/shared/types';
 import type { Group } from '../../src/types';
 import { createEmptyGroup } from '../../src/core';
 import {
@@ -137,4 +139,68 @@ export const AccessControl: Story = {
 export const SearchFilter: Story = {
   render: () => <UnstyledDemo useCase={searchFilter} />,
   parameters: src(searchFilter),
+};
+
+const dutchClassNames: TemplateClassNames = {
+  root: '',
+  group: '',
+  groupHeader: '',
+  combinator: '',
+  combinatorButton: '',
+  combinatorButtonActiveAnd: '',
+  combinatorButtonActiveOr: '',
+  rules: '',
+  rule: '',
+  ruleField: '',
+  ruleOperator: '',
+  ruleValue: '',
+  removeButton: '',
+  addButton: '',
+  addGroupButton: '',
+};
+
+const dutchLabels = {
+  and: 'EN',
+  or: 'OF',
+  addRule: '+ Regel',
+  addGroup: '+ Groep',
+  removeRule: 'Verwijder',
+  removeGroup: 'Verwijder',
+};
+
+export const DutchTheme: Story = {
+  name: 'Nederlands Thema',
+  render: () => {
+    const [query, setQuery] = useState<Group>(() => ({
+      id: 'root',
+      combinator: 'AND',
+      rules: [
+        { id: '1', field: 'naam', operator: 'eq', value: '' },
+        { id: '2', field: 'leeftijd', operator: 'gte', value: '18' },
+      ],
+    }));
+    return (
+      <div style={wrapperStyle}>
+        <h2 style={titleStyle}>Nederlands Thema</h2>
+        <p style={descriptionStyle}>
+          Aangepaste labels in het Nederlands — ongestijld, alleen labels.
+        </p>
+        <TemplateQueryBuilder
+          value={query}
+          onChange={setQuery}
+          classNames={dutchClassNames}
+          labels={dutchLabels}
+          fields={[
+            { name: 'naam', label: 'Naam', type: 'text' },
+            { name: 'leeftijd', label: 'Leeftijd', type: 'number' },
+            { name: 'stad', label: 'Stad', type: 'text' },
+            { name: 'actief', label: 'Actief', type: 'boolean' },
+          ]}
+        />
+        <pre style={preStyle}>
+          {JSON.stringify(query, null, 2)}
+        </pre>
+      </div>
+    );
+  },
 };

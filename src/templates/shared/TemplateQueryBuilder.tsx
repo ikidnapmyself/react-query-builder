@@ -1,10 +1,11 @@
 import type { QueryBuilderProps } from '../../types';
-import type { TemplateClassNames, RootProps } from './types';
+import type { TemplateClassNames, TemplateLabels, RootProps } from './types';
 import { useQueryBuilder } from '../../hooks';
 import { GroupBlock } from './GroupBlock';
 
 type TemplateQueryBuilderProps = QueryBuilderProps & {
   classNames: TemplateClassNames;
+  labels?: TemplateLabels;
   rootProps?: RootProps;
 };
 
@@ -17,6 +18,7 @@ export function TemplateQueryBuilder({
   operators,
   className,
   classNames,
+  labels,
   rootProps,
 }: TemplateQueryBuilderProps) {
   const ctx = useQueryBuilder({ value, defaultValue, onChange, fields, operators });
@@ -29,6 +31,7 @@ export function TemplateQueryBuilder({
         fields={ctx.fields}
         operators={ctx.operators}
         classNames={classNames}
+        labels={labels}
         onAddRule={ctx.addRule}
         onAddGroup={ctx.addGroup}
         onRemoveRule={ctx.removeRule}
