@@ -11,7 +11,10 @@ Build complex nested conditions with AND, OR, and GROUP operations. The output i
 
 [**Live Storybook Demo**](https://ikidnapmyself.github.io/react-query-builder/)
 
-<img width="871" height="576" alt="image" src="https://github.com/user-attachments/assets/1303d4a2-7bad-4a61-b4b0-2d9603dcdd24" />
+<img width="923" height="565" alt="image" src="https://github.com/user-attachments/assets/8e9ea65e-1a4c-482c-9ce4-6b7e953c6679" />
+<img width="923" height="238" alt="image" src="https://github.com/user-attachments/assets/588660a2-c223-4bda-9e8f-52faf49ca42e" />
+<img width="923" height="238" alt="image" src="https://github.com/user-attachments/assets/116700aa-3495-4eea-8226-95b644f1cc08" />
+
 
 ## Features
 
