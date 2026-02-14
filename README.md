@@ -1,9 +1,9 @@
 # react-query-builder
 
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/ikidnapmyself/react-query-builder/badges/quality-score.png?b=main)](https://scrutinizer-ci.com/g/ikidnapmyself/react-query-builder/?branch=main)
-[![Code Coverage](https://scrutinizer-ci.com/g/ikidnapmyself/react-query-builder/badges/coverage.png?b=main)](https://scrutinizer-ci.com/g/ikidnapmyself/react-query-builder/?branch=main)
 [![Build Status](https://scrutinizer-ci.com/g/ikidnapmyself/react-query-builder/badges/build.png?b=main)](https://scrutinizer-ci.com/g/ikidnapmyself/react-query-builder/build-status/main)
-[![Code Intelligence Status](https://scrutinizer-ci.com/g/ikidnapmyself/react-query-builder/badges/code-intelligence.svg?b=main)](https://scrutinizer-ci.com/code-intelligence)
+[![codecov](https://codecov.io/gh/ikidnapmyself/react-query-builder/graph/badge.svg)](https://codecov.io/gh/ikidnapmyself/react-query-builder)
+
 
 A composable, headless React 19 query builder component for conditional logic UIs.
 
